@@ -1,4 +1,4 @@
-// Q9 Inbuilt HOF – map, filter, reduce, sort
+// Q8 Inbuilt HOF – map, filter, reduce, sort
 
 let nums=[10,3,7,20,13,2];
 let squares=nums.map(n=>n*n);
@@ -20,7 +20,7 @@ let descending =[...nums].sort((a,b)=>b-a);
 console.log(descending);
 
 
-//Q9 
+//Q9 Callback Function Question
 function displayCar(){
     console.log("Car");
 }
