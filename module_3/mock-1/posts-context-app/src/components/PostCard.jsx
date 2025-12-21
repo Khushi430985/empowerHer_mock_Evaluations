@@ -6,7 +6,7 @@ const PostCard =({post}) =>{
     const {deletePost}=useContext(PostsContext);
     const [isEditing,setIsEditing]=useState(false);
     return(
-        <div style={{border:"1px solid gray", margin:"10px", padding:"10px"}}>
+        <div className="post-card" style={{border:"1px solid gray", margin:"10px", padding:"10px"}}>
         {isEditing ? (
             <EditPost post ={post}
             setIsEditing ={setIsEditing} />
