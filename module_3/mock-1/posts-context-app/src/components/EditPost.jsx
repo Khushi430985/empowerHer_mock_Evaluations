@@ -3,8 +3,12 @@ import { PostsContext } from "../context/PostsContext";
 
 const EditPost =({ post, setIsEditing})=>{
     const{updatePost}=useContext(PostsContext);
-    const [title,setTitle]=useState(post,title);
-    const[body,setBody]=useState(post,body);
+
+    const initialTitle =post.title;
+    const initialBody =post.body;
+
+    const [title,setTitle]=useState(initialTitle);
+    const[body,setBody]=useState(initialBody);
 
     const handleSave=()=>{
         updatePost(post.id,{
@@ -12,7 +16,7 @@ const EditPost =({ post, setIsEditing})=>{
         });
         setIsEditing(false);
     };
-    retrun (
+    return (
         <div>
             <input value ={title} onChange={e=> setTitle(e.target.value)} />
             <textarea value={body} onChange ={e=>setBody(e.target.value)}/>

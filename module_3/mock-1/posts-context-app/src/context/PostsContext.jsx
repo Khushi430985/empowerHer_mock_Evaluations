@@ -6,7 +6,7 @@ export const PostsProvider=({ children }) => {
     useEffect(() => {
 
         fetch("https://jsonplaceholder.typicode.com/posts")
-        ,then(res=>res.json())
+        .then(res=>res.json())
         .then(data=>
             setPosts(data.slice(0,20))
         );
