@@ -31,20 +31,22 @@ const Login =() =>{
             type="email"
             placeholder="Email"
             value={email}
-            autoComplete="off"
+            
             onChange={(e) =>
-                setEmail(e.target.trim())
-            } />
+                setEmail(e.target.value())
+            }
+             />
 
              <input
     
             type="password"
             placeholder="Password"
             value={password}
-            autoCapitalize="off"
+           
             onChange={(e) =>
-                setEmail(e.target.trim())
-            } />
+                setPassword(e.target.value())
+            }
+             />
 
             <button onClick={handleLogin}>Login</button>
         </div>
