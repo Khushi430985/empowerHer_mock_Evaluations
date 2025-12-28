@@ -1,29 +1,42 @@
 import React from "react";
-const FleetCard =({ data,onUpdate,onToggle,onDelete})=>{
-    return(
-        <div style={{border:"1px solid gray", padding:"10px"}}>
-            <p>Reg No: {data.regNo}</p>
-            <p>Category: {data.category}</p>
-            <p>Driver: {data.driver}</p>
-            <p>Status: {data.available}</p>
 
-            <button
-            onClick={()=>{
-                const name=prompt("Enter new driver name");
-                if(name) onUpdate(data.id,name);
-            }}>
-                Update Driver
-            </button>
+function FleetCard({ fleet, onUpdateDriver, onToggleAvailability, onDelete }) {
+ 
+  if (!fleet) return null;
 
-            <button onClick={()=>onToggle(data.id)}>
-                Toggle Availabilty
-            </button>
+  return (
+    <div
+      style={{
+        border: "1px solid black",
+        padding: "10px",
+        marginBottom: "10px",
+      }}
+    >
+      <p><b>Reg No:</b> {fleet.regNo}</p>
+      <p><b>Category:</b> {fleet.category}</p>
+      <p><b>Driver:</b> {fleet.driver}</p>
+      <p><b>Status:</b> {fleet.available}</p>
 
-            <button onClick={()=>onDelete(data.id)}>
-                Delete
-            </button>
-        </div>
-    );
-};
+      <button
+        onClick={() => {
+          const name = prompt("Enter new driver name");
+          if (name && name.trim()) {
+            onUpdateDriver(fleet.id, name);
+          }
+        }}
+      >
+        Update Driver
+      </button>
+
+      <button onClick={() => onToggleAvailability(fleet.id)}>
+        Toggle Availability
+      </button>
+
+      <button onClick={() => onDelete(fleet.id)}>
+        Delete
+      </button>
+    </div>
+  );
+}
 
 export default React.memo(FleetCard);
