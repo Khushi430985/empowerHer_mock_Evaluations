@@ -1,4 +1,19 @@
 {
-    "products": [],
-    "orders": [] 
+  "products": [
+    {
+      "id": 1769002405699,
+      "name": "Phone",
+      "price": 500000,
+      "stock": 2
+    }
+  ],
+  "orders": [
+    {
+      "id": 1769002449884,
+      "productId": 1769002405699,
+      "quantity": 3,
+      "status": "placed",
+      "createdAt": "2026-01-21"
+    }
+  ]
 }
