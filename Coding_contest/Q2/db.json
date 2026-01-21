@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": 1769001846620,
+      "name": "Mobile",
+      "price": 20000,
+      "stock": 3
+    }
+  ],
+  "orders": [
+    {
+      "id": 1769002001094,
+      "productId": 1769001846620,
+      "quantity": 2,
+      "status": "placed",
+      "createdAt": "2026-01-21"
+    }
+  ]
+}
